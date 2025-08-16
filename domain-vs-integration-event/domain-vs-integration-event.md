@@ -7,17 +7,21 @@ Domain events and integration events are key patterns within DDD for managing ch
 ## Domain events
 
 *   **Definition:** Domain events represent significant occurrences or state changes within a specific bounded context or microservice that are important to the domain experts. They represent facts about what has happened in the past within that domain.
+
 *   **Purpose:**
     *   **Loose Coupling:** Domain events help decouple different aggregates and components within the same bounded context. Rather than directly calling methods on other aggregates, one aggregate can publish an event, and other aggregates can react to it independently.
     *   **Side Effects:** They explicitly implement the side effects of changes within the domain, making the system's behavior easier to understand and maintain. For example, when an order is placed, a domain event (e.g., `OrderPlacedEvent`) can trigger other actions like updating inventory or sending confirmation emails.
     *   **Consistency:** They can be used to ensure eventual consistency between aggregates within the same bounded context.
     *   **Auditing and Logging:** Domain events can be persisted as an immutable record, useful for auditing, debugging, and understanding system behavior over time.
+
 *   **Characteristics:**
     *   **Past Tense Naming:** Named in the past tense (e.g., `OrderPlacedEvent`, `UserRegisteredEvent`).
     *   **Immutable:** Represent historical facts and should not be changed once created.
     *   **Domain-Specific Language:** Use the ubiquitous language of the domain, understandable by both developers and business stakeholders.
     *   **Bounded Context Scoped:** Primarily focus on the concerns within a single bounded context.
+
 *   **Implementation:** Often implemented using an in-memory event bus or a mediator pattern (like MediatR in .NET). They can be handled synchronously or asynchronously, depending on the need for immediate feedback or eventual consistency.
+
 *   **Example:** An `OrderPlacedEvent` raised by the Order aggregate within an Ordering bounded context.
 
 ## Integration events
