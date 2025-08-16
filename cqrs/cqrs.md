@@ -80,7 +80,7 @@ Even with a single database, you can implement strategies to improve read and wr
 
 *   **Simplified implementation:** Using a single database initially can be simpler than setting up and managing separate databases, especially when starting with CQRS or in scenarios where the performance difference between reads and writes isn't extreme.  
 *   **Strong consistency:** With a single database, it's easier to maintain strong consistency between reads and writes, as the data is not replicated across different stores.  
-*   **Limitations:** The primary limitation remains the inability to fully optimize the database schema and scaling for both read and write concerns simultaneously  
+*   **Limitations:** The primary limitation remains the inability to fully optimize the database schema and scaling for both read and write concerns simultaneously.
 
 ## Conclusion  
 
