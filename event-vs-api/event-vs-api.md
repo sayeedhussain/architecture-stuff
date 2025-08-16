@@ -1,4 +1,6 @@
-# Decision Flow
+Copilot Powered
+
+# Event vs API - Decision Flow
 
 ### Q1: Does the caller need to know *right now* if the other service's action succeeded?
 
