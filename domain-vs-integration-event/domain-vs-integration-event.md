@@ -6,7 +6,7 @@ Domain events and integration events are key patterns within DDD for managing ch
 
 ## Domain events
 
-*   Domain events represent significant occurrences or state changes within a specific bounded context or microservice that are important to the domain experts. They represent facts about what has happened in the past within that domain.
+Domain events represent significant occurrences or state changes within a specific bounded context or microservice that are important to the domain experts. They represent facts about what has happened in the past within that domain.
 
 *   **Purpose:**
     *   **Loose Coupling:** Domain events help decouple different aggregates and components within the same bounded context. Rather than directly calling methods on other aggregates, one aggregate can publish an event, and other aggregates can react to it independently.
