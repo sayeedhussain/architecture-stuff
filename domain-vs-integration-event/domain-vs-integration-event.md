@@ -26,7 +26,7 @@ Domain events represent significant occurrences or state changes within a specif
 
 ## Integration events
 
-    Integration events represent changes that need to be communicated between different bounded contexts, microservices, or even external applications. They are essentially notifications about something that has happened that other parts of the overall system need to be aware of and react to.
+Integration events represent changes that need to be communicated between different bounded contexts, microservices, or even external applications. They are essentially notifications about something that has happened that other parts of the overall system need to be aware of and react to.
 
 *   **Purpose:**
     *   **Cross-Service Communication:** Facilitate communication and coordination between different microservices within a distributed system.
