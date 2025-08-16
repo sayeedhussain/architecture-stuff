@@ -6,7 +6,7 @@ Domain events and integration events are key patterns within DDD for managing ch
 
 ## Domain events
 
-    Domain events represent significant occurrences or state changes within a specific bounded context or microservice that are important to the domain experts. They represent facts about what has happened in the past within that domain.
+*   Domain events represent significant occurrences or state changes within a specific bounded context or microservice that are important to the domain experts. They represent facts about what has happened in the past within that domain.
 
 *   **Purpose:**
     *   **Loose Coupling:** Domain events help decouple different aggregates and components within the same bounded context. Rather than directly calling methods on other aggregates, one aggregate can publish an event, and other aggregates can react to it independently.
@@ -65,15 +65,18 @@ In essence, domain events are about **internal consistency and decoupling within
     *   Knowing about all the downstream side effects (e.g., inventory updates, email sending).
     *   Potentially dealing with the complexities of each side effect (e.g., error handling, retries for email).
     *   This violates the Single Responsibility Principle (SRP) and the Open/Closed Principle (OCP). Adding a new side effect (e.g., loyalty point calculation) means modifying the existing, potentially complex, application service, increasing the risk of bugs and making it harder to test.
+
 *   **Domain Events:** By contrast, the domain event is raised within the application layer, encapsulating the fact of what happened within the domain. Individual event handlers (which are also part of the application layer) then subscribe to this event and handle specific side effects:
     *   `InventoryUpdateHandler` handles inventory updates.
     *   `EmailNotificationHandler` sends emails.
     *   `LoyaltyPointHandler` calculates loyalty points.
+
 *   This approach adheres to SRP (each handler has one responsibility) and OCP (you can add new handlers without modifying existing code).
 
 ### 2. Enhanced testability
 
 *   **Application Service:** Testing an application service that directly orchestrates multiple side effects can be cumbersome. You have to mock out all the dependent services (inventory, email, etc.) to isolate the application service's logic.
+
 *   **Domain Events:** With domain events, you can test:
     *   **The aggregate's behavior in isolation:** Ensure `Order.PlaceOrder()` correctly changes the order's state and raises the `OrderPlacedEvent`.
     *   **Individual event handlers in isolation:** Verify that `InventoryUpdateHandler` correctly updates inventory based on the `OrderPlacedEvent`. You can mock the `OrderPlacedEvent` and test the handler without needing to involve the entire application flow.
