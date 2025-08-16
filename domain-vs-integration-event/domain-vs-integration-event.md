@@ -92,7 +92,7 @@ In essence, domain events are about **internal consistency and decoupling within
 *   **Consistency:** While immediate transactional consistency is achievable using a single unit of work and deferring event dispatching until after saving changes, domain events also provide a pathway to manage eventual consistency between aggregates, which is crucial for scalability, particularly when dealing with high-traffic applications.
 *   **Complex Workflows:** Domain events shine when handling complex workflows that involve multiple steps and potential failures. They allow for the creation of compensating actions and sagas, providing a more robust and flexible approach than a monolithic application service that orchestrates everything.
 
-## The difference between event handlers and application services
+## Difference between event handlers and application services
 
 Domain event handlers are *similar* to application services in that they both contain application logic and can interact with infrastructure (like repositories). However, their *purpose* and *trigger* are different:
 
