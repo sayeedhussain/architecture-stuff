@@ -27,8 +27,6 @@
   - Enrichment done by the event owner  
   - Consumers build own projections for cross-domain views  
 
----
-
 ## Example Walkthrough (E-commerce)
 
 - **Reserve stock before confirming order**  
@@ -43,9 +41,7 @@
   - Doesn’t block payment flow → Event (**PaymentReceived**)  
   - `MarketingService` subscribes, no API call needed.  
 
----
-
-## 🛡 Governance Checklist
+## Governance Checklist
 
 1. Ask the consistency question first — not “Is it critical?”  
 2. Decide integration style (API or Event)  
