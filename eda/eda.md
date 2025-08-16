@@ -1,4 +1,6 @@
-# What is Event Driven Architecture (EDA)? - Gemini Powered
+Gemini Powered
+
+# What is Event Driven Architecture (EDA)?
 
 ![Event Driven Architecture Diagram](eda.png)
 
