@@ -6,7 +6,7 @@ Domain events and integration events are key patterns within DDD for managing ch
 
 ## Domain events
 
-*   **Definition:** Domain events represent significant occurrences or state changes within a specific bounded context or microservice that are important to the domain experts. They represent facts about what has happened in the past within that domain.
+    Domain events represent significant occurrences or state changes within a specific bounded context or microservice that are important to the domain experts. They represent facts about what has happened in the past within that domain.
 
 *   **Purpose:**
     *   **Loose Coupling:** Domain events help decouple different aggregates and components within the same bounded context. Rather than directly calling methods on other aggregates, one aggregate can publish an event, and other aggregates can react to it independently.
@@ -26,16 +26,20 @@ Domain events and integration events are key patterns within DDD for managing ch
 
 ## Integration events
 
-*   **Definition:** Integration events represent changes that need to be communicated between different bounded contexts, microservices, or even external applications. They are essentially notifications about something that has happened that other parts of the overall system need to be aware of and react to.
+    Integration events represent changes that need to be communicated between different bounded contexts, microservices, or even external applications. They are essentially notifications about something that has happened that other parts of the overall system need to be aware of and react to.
+
 *   **Purpose:**
     *   **Cross-Service Communication:** Facilitate communication and coordination between different microservices within a distributed system.
     *   **Achieve Eventual Consistency:** Help in maintaining data consistency across different services that own their own data and models.
     *   **Loose Coupling:** Promote loose coupling between services, allowing them to evolve independently.
+
 *   **Characteristics:**
     *   **Asynchronous:** Always processed asynchronously.
     *   **Broader Scope:** Cross service boundaries.
     *   **Focus on State Changes:** Indicate state changes that are relevant for external systems.
+
 *   **Implementation:** Typically published to and consumed from an event bus or message broker (e.g., RabbitMQ, Azure Service Bus). Mechanisms like the transactional outbox pattern are often used to ensure reliability and consistency in publishing integration events.
+
 *   **Example:** After the `OrderPlacedEvent` (domain event) is handled in the Ordering microservice, an `OrderPlacedIntegrationEvent` might be published to a message broker. This event could then be consumed by other services like Shipping and Inventory to initiate their respective processes.
 
 ## Key differences summarized
