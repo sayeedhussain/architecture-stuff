@@ -1,3 +1,5 @@
+*Gemini Powered*
+
 # What is a Bounded Context in DDD?
 
 In Domain-Driven Design (DDD), a Bounded Context is a logical boundary within a larger domain where a specific domain model and its associated language are consistent and meaningful.
