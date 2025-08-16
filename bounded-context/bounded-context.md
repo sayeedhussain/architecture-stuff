@@ -1,4 +1,4 @@
-*Gemini Powered*
+Gemini Powered
 
 # What is a Bounded Context in DDD?
 
